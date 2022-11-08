@@ -6,7 +6,7 @@
 ; https://4clojure.oxal.org/#/problem/14
 
 (comment
-  (def answer14 0)
+  (def answer14 8)
 
   (= answer14 ((fn add-five [x] (+ x 5)) 3))
   (= answer14 ((fn [x] (+ x 5)) 3))
@@ -19,7 +19,7 @@
 (comment
   (defn answer16
     [name]
-    name)
+    (str "Hello, " name "!"))
 
   (= (answer16 "Dave") "Hello, Dave!")
   (= (answer16 "Jenn") "Hello, Jenn!")
@@ -29,7 +29,7 @@
 ; https://4clojure.oxal.org/#/problem/17
 
 (comment
-  (def answer17 '(1 2 3))
+  (def answer17 '(6 7 8))
 
   (= answer17 (map #(+ % 5) '(1 2 3))))
 
@@ -37,6 +37,6 @@
 ; https://4clojure.oxal.org/#/problem/18
 
 (comment
-  (def answer18 '(3 5))
+  (def answer18 '(6 7))
 
   (= answer18 (filter #(> % 5) '(3 4 5 6 7))))

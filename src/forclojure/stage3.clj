@@ -8,7 +8,10 @@
 (comment
   (defn answer44
     [index nums]
-    nil)
+    (let [length (count nums)]
+      (->> (cycle nums)
+           (drop (mod index length))
+           (take length))))
 
   (= (answer44 2 [1 2 3 4 5]) '(3 4 5 1 2))
   (= (answer44 -2 [1 2 3 4 5]) '(4 5 1 2 3))
@@ -22,19 +25,22 @@
 (comment
   (defn answer59
     [& funcs]
-    funcs)
+    (fn [& args]
+      (map (fn [v] (apply v args)) funcs)))
 
   (= [21 6 1] ((answer59 + max min) 2 3 5 1 6 4))
   (= ["HELLO" 5] ((answer59 #(.toUpperCase %) count) "hello"))
-  (= [2 6 4] ((answer59 :a :c :b) {:a 2, :b 4, :c 6, :d 8 :e 10}))) 
- 
+  (= [2 6 4] ((answer59 :a :c :b) {:a 2, :b 4, :c 6, :d 8 :e 10})))
+
 ; Word Sorting
 ; https://4clojure.oxal.org/#/problem/70
 
 (comment
   (defn answer70
     [text]
-    [])
+    (->> (clojure.string/split text #" ")
+         (sort-by (fn [v] (.toUpperCase v)))
+         (map (fn [s] (clojure.string/replace s #"[,.?!;:]" "")))))
 
   (= (answer70  "Have a nice day.")
      ["a" "day" "Have" "nice"])

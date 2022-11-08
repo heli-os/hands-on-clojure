@@ -10,9 +10,9 @@
     [nums]
     (reduce conj '() nums)))
 
-  (= (answer23 [1 2 3 4 5]) [5 4 3 2 1])
-  (= (answer23 (sorted-set 5 7 2 7)) '(7 5 2))
-  (= (answer23 [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]])
+(= (answer23 [1 2 3 4 5]) [5 4 3 2 1])
+(= (answer23 (sorted-set 5 7 2 7)) '(7 5 2))
+(= (answer23 [[1 2] [3 4] [5 6]]) [[5 6] [3 4] [1 2]])
 
 ; Sum It All Up
 ; https://4clojure.oxal.org/#/problem/24

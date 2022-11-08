@@ -8,7 +8,7 @@
 (comment
   (defn answer23
     [nums]
-    nums)
+    (seq (reduce conj '() nums)))
 
   (= (answer23 [1 2 3 4 5]) [5 4 3 2 1])
   (= (answer23 (sorted-set 5 7 2 7)) '(7 5 2))
@@ -20,7 +20,7 @@
 (comment
   (defn answer24
     [nums]
-    nums)
+    (int (reduce + nums)))
 
   (= (answer24 [1 2 3]) 6)
   (= (answer24 (list 0 -2 5 5)) 8)
@@ -34,13 +34,13 @@
 (comment
   (defn answer27
     [words]
-    words)
+    (= (reduce conj '() (seq words)) (seq words))))
 
-  (false? (answer27 '(1 2 3 4 5)))
-  (true? (answer27 "racecar"))
-  (true? (answer27 [:foo :bar :foo]))
-  (true? (answer27 '(1 1 3 3 1 1)))
-  (false? (answer27 '(:a :b :c))))
+(false? (answer27 '(1 2 3 4 5)))
+(true? (answer27 "racecar"))
+(true? (answer27 [:foo :bar :foo]))
+(true? (answer27 '(1 1 3 3 1 1)))
+(false? (answer27 '(:a :b :c)))
 
 ; Duplicate a Sequence
 ; https://4clojure.oxal.org/#/problem/32
@@ -48,7 +48,7 @@
 (comment
   (defn answer32
     [elements]
-    elements)
+    (seq (interleave elements elements)))
 
   (= (answer32 [1 2 3]) '(1 1 2 2 3 3))
   (= (answer32 [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
